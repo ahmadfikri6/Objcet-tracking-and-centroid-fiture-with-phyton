@@ -41,7 +41,7 @@ while True:
     #code untuk hasil dari atau setelah dari trackbar HSV
     mask = cv2.inRange(img, lower, upper)
 
-    mask_contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)  # Finding contours in mask image
+    mask_contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     # menemukan track kontur
     if len(mask_contours) != 0:
         for mask_contour in mask_contours:
@@ -49,7 +49,7 @@ while True:
                 x, y, w, h = cv2.boundingRect(mask_contour)
 
                 #frame Object traking
-                cv2.rectangle(mask, (x, y), (x + w, y + h), (70, 255, 255), 3) #drawing rectangle
+                cv2.rectangle(mask, (x, y), (x + w, y + h), (70, 255, 255), 3)
 
                 #menentukan titik tengah object
                 tengah = cv2.moments(mask)
